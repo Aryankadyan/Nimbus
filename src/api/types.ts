@@ -56,5 +56,5 @@ export interface GeocodingResponse{
     lat: number
     lon: number
     country: string
-    state: string
+    state?: string
 }

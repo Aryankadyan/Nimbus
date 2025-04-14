@@ -50,8 +50,8 @@ export function WeatherDetails({ data }: WeatherDetailsProps) {
     },
   ];
 
-  return (
-    <Card>
+  return(
+  <Card>
       <CardHeader>
         <CardTitle>Weather Details</CardTitle>
       </CardHeader>

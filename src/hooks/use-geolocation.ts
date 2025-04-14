@@ -6,6 +6,7 @@ interface GeolocationState{
     error: string | null
     isLoading: boolean
 }
+
 export function useGeolocation(){
     const[locationData, setLocationData] = useState<GeolocationState>({
         coordinates: null,
@@ -35,7 +36,8 @@ export function useGeolocation(){
             error: null,
             isLoading: false,
         })
-       }, (error)=>{
+       }, 
+       (error)=>{
         let errorMessage: string
 
         switch(error.code){
@@ -51,25 +53,27 @@ export function useGeolocation(){
                 default:
                  errorMessage = "An unknown error occured."        
             }
+
             setLocationData({
                 coordinates: null,
                 error:  errorMessage,
                 isLoading: false,
             })
-       },{
+       },
+       {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0,
        })
     }
 
+    // Get location on component mount
     useEffect(()=>{
         getLocation()
     }, [])
 
     return {
         ...locationData,
-        getLocation,
-
+        getLocation,  // Get location on component mount
     }
 }

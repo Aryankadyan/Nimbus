@@ -1,18 +1,14 @@
-import {
-  useForecastQuery,
-  useReverseGeocodeQuery,
-  useWeatherQuery,
-} from "@/hooks/use-weather";
+import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery, } from "@/hooks/use-weather";
 import { CurrentWeather } from "../components/current-weather";
 import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
 import { Button } from "../components/ui/button";
-import { MapPin, AlertTriangle, RefreshCw } from "lucide-react";
+import { AlertTriangle, RefreshCw, MapPin } from "lucide-react";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import { WeatherDetails } from "../components/weather-details";
-import {WeatherForecast} from "../components/weather-forecast";
+import { WeatherForecast } from "../components/weather-forecast";
 import { HourlyTemperature } from "../components/hourly-temperature";
 import WeatherSkeleton from "../components/loading-skeleton";
-import FavoriteCities from "@/components/favorite-cities";
+import { FavoriteCities } from "@/components/favorite-cities";
 
 export function WeatherDash() {
   const {
